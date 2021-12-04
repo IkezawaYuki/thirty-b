@@ -2,12 +2,19 @@ class BooksController < ApplicationController
   protect_from_forgery except: [:destroy]
   before_action :set_book, only: [:show, :destroy]
 
-  def show
+  # def show
+  #   respond_to do |format|
+  #     format.html do |html|
+  #       html.mobile { redirect_to profile_path }
+  #     end
+  #     format.json { render json: @book }
+  #   end
+  # end
+
+  def show 
     respond_to do |format|
-      format.html do |html|
-        html.mobile { redirect_to profile_path }
-      end
-      format.json { render json: @book }
+      format.html
+      format.json
     end
   end
 
